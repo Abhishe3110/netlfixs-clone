@@ -6,9 +6,14 @@ html,body{
 }
 .container{
   width: 100%;
-  max-width: 1242px;
+  max-width: 1350px;
   margin: 0 auto;
+  margin-left: 50px;
 }
+*::-webkit-scrollbar-bottom{
+  display: flex;
+}
+/* header section */
 #header{
   background-color: gray;
 }
@@ -55,7 +60,53 @@ html,body{
  }
  i{
   font-size: 25px;
+ 
  }
+  /* Moves sction css */
+  .movies-section{
+
+  }
+  .movie-section-heading{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+  }
+
+  .explore-nudge{
+    color: #54b9c5;
+    font-size: 12px;
+    display: none;
+  }
+  .movie-section-heading:hover .explore-nudge{
+    display: inline-block;
+  }
+  .movies-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+
+
+
+
+
+  .movie-item{
+    width: 245px;
+    object-fit: contain;
+    margin-right: 6px;
+    border-radius: 5px;
+  }
+  .movie-item:hover{
+    transform: scale(1.3);
+    transition:  transform linear 310ms;
+  }
  /* Responsive */
  @media (max-width:767px){
   .main-nav{
