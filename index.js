@@ -29,14 +29,15 @@ function fetchAndBuildAllSections() {
 function fetchTrendingMovies() {
   fetchAndBuildMovieSections(apiPaths.fetchTrending, 'Trending Now')
   .then(list=>{
+    const randomIndex = parseInt(Math.random()*list.length)
     console.log(list[0]);
-    buildBannerSection(list[0])
+    buildBannerSection(list[randomIndex])
   }).catch(err=>{
     console.error(err)
   });
 }
 function buildBannerSection(movie){
- const bannerCont = document.getElementById('banner-section');
+ const bannerCont = document.getElementById('banner-section'); 
  bannerCont.style.backgroundImage = `url(${imgPath}${movie.backdrop_path})`;
 
  const div= document.createElement('div');
@@ -61,7 +62,7 @@ function fetchAndBuildMovieSections(fetchUrl, categoryName) {
       if (Array.isArray(movies) && movies.length) {
         buildMoviesSection(movies.slice(0, 10), categoryName)
       }
-      return movies
+      return movies 
     })
     .catch(err => console.error(err))
 }
